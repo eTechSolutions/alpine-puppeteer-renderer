@@ -1,7 +1,9 @@
 FROM node:11-alpine
 
+ARG MAX_HEADER_SIZE
 ENV CHROME_BIN="/usr/bin/chromium-browser" \
-    NODE_ENV="production"
+    NODE_ENV="production" \
+    MAX_HEADER_SIZE=${MAX_HEADER_SIZE}
 RUN set -x \
     && apk update \
     && apk upgrade \
